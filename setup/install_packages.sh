@@ -12,6 +12,6 @@ mapfile -t packages < "$packages_file"
 
 for package in "${packages[@]}"; do
 	IFS=' ' read -r package binary min_version <<< "$package"
-	apt-get install $(echo $package | awk '{print tolower($0)}') -y
+	dnf install $(echo $package | awk '{print tolower($0)}') -y
 done
 
